@@ -1,10 +1,4 @@
 # Framework MVC com PHP
-Um simples projeto seguindo os padrões de apresentação Web MVC com PHP 7 puro.
-
-Acesse o artigo no Medium clicando <a href="https://medium.com/@jardelgoncalves/construindo-um-simples-framework-mvc-com-php-349e9cacbeb1">aqui</a>
-
-
-# Framework MVC com PHP
 
 Um simples projeto seguindo os padrões de apresentação Web MVC com PHP 7.
 
@@ -34,12 +28,9 @@ No seu caso, esse projeto tem como objetivo principal:
 
 
 
-# 🚀 Como Executar o Projeto
-1️⃣ Clone o repositório: git clone https://github.com/seu-usuario/html-css-basico.git
-2️⃣ Acesse a pasta do projeto: cd html-css-basico
-3️⃣ Abra o projeto no navegador
+## 🚀 Como Executar o Projeto
 
-1. Pré-requisitos
+# 1. Pré-requisitos
 
 Antes de iniciar, instale:
 - PHP 7.x
@@ -52,24 +43,24 @@ Uma opção mais simples é utilizar:
 - WampServer
 - Laragon
 
-2. Clonar o Projeto
+# 2. Clonar o Projeto
 
 Faça o clone dentro das pastas "/htdocs" (XAMPP) ou "/www" (WAMP). Com o terminal aberto em uma das pastas, é só executar o código abaixo.
 git clone https://github.com/seu-usuario/html-css-basico.git
 
-3. Iniciar os Serviços
+# 3. Iniciar os Serviços
 
 Abra o painel do XAMPP/Wamp e inicie:
 - Apache
 - MySQL
 
 
-4. Criar o Banco de Dados
+# 4. Criar o Banco de Dados
 
 - Abra o navegador: http://localhost/phpmyadmin
 - Importe o arquivo SQL do projeto: database.sql
 
-5. Configurar a Conexão com o Banco
+# 5. Configurar a Conexão com o Banco
 
 - Localize o arquivo de configuração: api/core/Database.php
 - Configure:
@@ -81,7 +72,7 @@ $user = "root"; (ou troque pelo usuário personalizado do seu servidor, caso exi
 $pass = ""; (ou troque pela senha personalizada do seu servidor, caso exista.)
 ?>
 
-6. Configurar URL Base (se necessário)
+# 6. Configurar URL Base (se necessário)
 
 Em alguns projetos MVC existe uma constante:
 
@@ -90,14 +81,14 @@ define('BASE_URL', 'http://localhost/api-produtos-php-mvc/');
 Configure com o nome correto da sua pasta (onde o projeto se localiza no seu computador).
 
 
-7. Executar o Projeto
+# 7. Executar o Projeto
 
 Abra no navegador:
 
 http://localhost/api-produtos-php-mvc
 
 
-8. Estrutura Básica do Projeto MVC
+# 8. Estrutura Básica do Projeto MVC
 project/
 │
 ├── app/
