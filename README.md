@@ -28,9 +28,9 @@ No seu caso, esse projeto tem como objetivo principal:
 
 
 
-## 🚀 Como Executar o Projeto
+# 🚀 Como Executar o Projeto
 
-# 1. Pré-requisitos
+## 1. Pré-requisitos
 
 Antes de iniciar, instale:
 - PHP 7.x
