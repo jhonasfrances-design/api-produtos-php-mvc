@@ -92,15 +92,17 @@ http://localhost/api-produtos-php-mvc
 ## 8. Estrutura Básica do Projeto MVC
 
 ```bash
-project/
+/
 │
-├── app/
+├── api/
 │   ├── controllers/
 │   ├── models/
 │   └── views/
+|   └── database/
+|   └── core/
 │
-├── public/
-├── config/
-├── core/
+├── assets/
+├── .htaccess
+├── README.md
 └── index.php
 ```
