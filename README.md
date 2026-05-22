@@ -47,7 +47,7 @@ Uma opção mais simples é utilizar:
 
 Faça o clone dentro das pastas "/htdocs" (XAMPP) ou "/www" (WAMP). Com o terminal aberto em uma das pastas, é só executar o código abaixo.
 
-```git clone [https://github.com/seu-usuario/html-css-basico.git](https://github.com/thayslcorrea/api-produtos-php-mvc) ```
+```git clone https://github.com/thayslcorrea/api-produtos-php-mvc ```
 
 ## 3. Iniciar os Serviços
 
