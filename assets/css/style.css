@@ -1,0 +1,109 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+  background: #f4f6f9;
+}
+
+/* MENU LATERAL */
+.sidebar {
+  width: 250px;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #111827, #1f2937);
+  padding: 30px;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+}
+
+.sidebar-title {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+/* LINKS DO MENU */
+.menu-link {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 18px;
+  display: block;
+  margin-bottom: 18px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.menu-link:hover {
+  background: #374151;
+  color: #ffffff;
+  padding-left: 15px;
+}
+
+/* CONTEÚDO PRINCIPAL */
+.main-content {
+  flex: 1;
+  min-height: 100vh;
+  background: #f4f6f9;
+  padding: 40px;
+}
+
+/* CAIXA CENTRAL */
+.dashboard-box {
+  border: none;
+  font-size: 17px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+/* TITULOS */
+.dashboard-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #111827;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.dashboard-text {
+  font-size: 17px;
+  color: #4b5563;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* TABELA */
+.table {
+  background: rgb(212, 38, 38);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.table th {
+  background: #1f2937;
+  color: white;
+  font-size: 14px;
+}
+
+.table td {
+  font-size: 14px;
+  background: #ffffff;
+}
+
+/* SCROLL DA TABELA */
+.table-scroll {
+  max-height: 500px;
+  overflow-y: auto;
+  border-radius: 10px;
+}
+
+/* FORM */
+.form-control:disabled {
+  background-color: #f3f4f6;
+  color: #111;
+  border: 1px solid #ddd;
+}
