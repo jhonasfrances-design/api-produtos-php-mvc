@@ -11,10 +11,12 @@ class Controller{
   }
 
   public function view($view, $data = []){
-    extract($data);
 
-    require_once "api/views/$view.php";
-  }
+  extract($data);
+
+  require_once "api/views/layout.php";
+
+}
 
   public function pageNotFound(){
     $this->view('erro404');
