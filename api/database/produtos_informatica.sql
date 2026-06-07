@@ -2,8 +2,8 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Tempo de geração: 18/05/2026 às 23:13
+-- Host: 127.0.0.1
+-- Tempo de geração: 02/06/2026 às 02:27
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -27,10 +27,6 @@ SET time_zone = "+00:00";
 -- Estrutura para tabela `categorias`
 --
 
-CREATE DATABASE produtos_informatica;
-
-USE produtos_informatica;
-
 CREATE TABLE `categorias` (
   `id` int(11) NOT NULL,
   `nome` varchar(100) NOT NULL
@@ -46,8 +42,7 @@ INSERT INTO `categorias` (`id`, `nome`) VALUES
 (6, 'Componentes'),
 (1, 'Computadores'),
 (2, 'Periféricos'),
-(4, 'Redes'),
-(8, 'teste thays');
+(4, 'Redes');
 
 -- --------------------------------------------------------
 
@@ -70,8 +65,7 @@ CREATE TABLE `produtos` (
 --
 
 INSERT INTO `produtos` (`id`, `nome`, `descricao`, `preco`, `estoque`, `categoria_id`, `data_cadastro`) VALUES
-(1, 'Notebook Lenovo IdeaPad 3', 'Notebook com Ryzen 5, 8GB RAM e SSD 256GB', 2899.9, 20, 1, '2025-11-14 14:26:25'),
-(2, 'Desktop Gamer Ryzen 7', 'PC Gamer com RTX 3060, 16GB RAM, SSD 1TB', 7999, 8, 1, '2025-11-14 14:26:25'),
+(2, 'Desktop Gamer Ryzen 7', 'PC Gamer com RTX 3060, 16GB RAM, SSD 1TB', 7999, 10, 1, '2025-11-14 14:26:25'),
 (3, 'Mouse Logitech M720', 'Mouse wireless multi-dispositivo', 199.99, 40, 2, '2025-11-14 14:26:25'),
 (4, 'Teclado Mecânico Redragon Kumara', 'Teclado mecânico com switches Outemu', 249.9, 25, 2, '2025-11-14 14:26:25'),
 (5, 'HD Seagate 1TB', 'HD interno SATA 7200 RPM', 299.99, 30, 3, '2025-11-14 14:26:25'),
@@ -82,6 +76,30 @@ INSERT INTO `produtos` (`id`, `nome`, `descricao`, `preco`, `estoque`, `categori
 (10, 'Webcam Logitech C270', 'Webcam HD 720p', 169.99, 18, 5, '2025-11-14 14:26:25'),
 (11, 'Memória RAM 8GB DDR4', 'Memória Corsair 2666MHz', 159.9, 35, 6, '2025-11-14 14:26:25'),
 (12, 'Placa de Vídeo GTX 1650', 'Placa de vídeo Nvidia 4GB GDDR5', 1099, 12, 6, '2025-11-14 14:26:25');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(150) NOT NULL,
+  `especialidade` varchar(150) NOT NULL,
+  `idade` int(11) NOT NULL,
+  `email` varchar(150) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `nome`, `especialidade`, `idade`, `email`) VALUES
+(1, 'José Barros da Silva', 'Técnico em informática', 32, 'barros@gmail.com'),
+(2, 'Antônio de Pádua', 'Professor', 31, 'padua@gmail.com'),
+(4, 'Tony Frances', 'Programador', 24, 'frances@gmail.com'),
+(6, 'Amélia de Sousa', 'Programadora', 33, 'amelia@hotmail.com');
 
 --
 -- Índices para tabelas despejadas
@@ -102,6 +120,12 @@ ALTER TABLE `produtos`
   ADD KEY `categoria_id` (`categoria_id`);
 
 --
+-- Índices de tabela `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT para tabelas despejadas
 --
 
@@ -109,13 +133,19 @@ ALTER TABLE `produtos`
 -- AUTO_INCREMENT de tabela `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+
+--
+-- AUTO_INCREMENT de tabela `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Restrições para tabelas despejadas
