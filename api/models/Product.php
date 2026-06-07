@@ -47,9 +47,7 @@ class Product{
   }
 
    public static function deleteById(int $id){
-
     $conn = new Database();
-
     return $conn->executeQuery(
       'DELETE FROM produtos WHERE id = :ID',
       array(
@@ -57,5 +55,34 @@ class Product{
       )
     );
   }
+
+  public static function create(array $data){
+  $conn = new Database();
+  return $conn->executeQuery(
+    'INSERT INTO produtos
+    (
+      nome,
+      descricao,
+      preco,
+      estoque,
+      categoria_id
+    )
+    VALUES
+    (
+      :NOME,
+      :DESCRICAO,
+      :PRECO,
+      :ESTOQUE,
+      :CATEGORIA_ID
+    )',
+    array(
+      ':NOME' => $data['nome'],
+      ':DESCRICAO' => $data['descricao'],
+      ':PRECO' => $data['preco'],
+      ':ESTOQUE' => $data['estoque'],
+      ':CATEGORIA_ID' => $data['categoria_id']
+    )
+  );
+}
 
 }
