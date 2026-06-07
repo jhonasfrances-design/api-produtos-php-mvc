@@ -5,7 +5,7 @@
   </h1>
 
   <p class="dashboard-text">
-    Sistema de Gestão para Assistência Técnica desenvolvido com arquitetura MVC utilizando PHP, Bootstrap e MySQL.
+    Sistema de Loja de Celular desenvolvido com arquitetura MVC utilizando PHP, Bootstrap e MySQL.
   </p>
 
 </div>

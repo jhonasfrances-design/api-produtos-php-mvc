@@ -1,5 +1,5 @@
 <?php 
-    define('BASE_URL', 'http://localhost/API-PRODUTOS-PHP');
+    define('BASE_URL', 'http://localhost/projetos_github/API-REST-PRODUTOS-PHP');
 ?>
 
 <!DOCTYPE html>

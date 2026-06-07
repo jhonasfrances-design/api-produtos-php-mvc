@@ -23,7 +23,7 @@
     <div class="sidebar d-flex flex-column justify-content-between">
       <div>
         <h1 class="sidebar-title">
-          Assistência<br>Técnica
+          JF<br>TECH
         </h1>
         <div class="d-flex flex-column">
         <a href="<?= BASE_URL ?>" class="menu-link"><i class="bi bi-speedometer2"> </i> - Dashboard</a>        
