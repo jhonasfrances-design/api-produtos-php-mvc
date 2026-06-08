@@ -1,108 +1,213 @@
 # Framework MVC com PHP
+Um simples projeto seguindo os padrões de apresentação Web MVC com PHP 7 puro.
 
-Um simples projeto seguindo os padrões de apresentação Web MVC com PHP 7.
+Acesse o artigo no Medium clicando <a href="https://medium.com/@jardelgoncalves/construindo-um-simples-framework-mvc-com-php-349e9cacbeb1">aqui</a>
 
-# 📌 Tecnologias Utilizadas
+funcionamento do sistema:
 
-- PHP 7.0
-- CSS3 / Bootstrap
-- HMTL5
-- Banco de Dados MySQL
+URL → App (roteamento) → Controller → Model → Banco de Dados → Controller → View → Usuário
 
+# Sistema de loja de celular
 
-# 🎯 Objetivos do Projeto
+## Sobre o Projeto
 
-O objetivo de um projeto usando o padrão MVC (Model–View–Controller) com PHP é organizar o desenvolvimento da aplicação web de forma estruturada, separando responsabilidades e facilitando manutenção, escalabilidade e reutilização de código.
+Este projeto é um sistema web desenvolvido em PHP utilizando a arquitetura MVC (Model-View-Controller). O objetivo do sistema é permitir o gerenciamento de produtos, categorias e clientes de forma simples e organizada.
 
-No seu caso, esse projeto tem como objetivo principal:
+A aplicação foi construída sem frameworks externos, utilizando PHP Orientado a Objetos, PDO para acesso ao banco de dados MySQL e Bootstrap para a interface visual.
 
-- Criar uma aplicação web em PHP 7 seguindo arquitetura MVC;
-- Separar:
-   - Model → regras de negócio e acesso ao banco MySQL;
-   - View → interface visual com HTML5, CSS3 e Bootstrap;
-   - Controller → controle das requisições e comunicação entre Model e View;
-- Melhorar organização do código;
-- Facilitar manutenção e evolução do sistema;
-- Aplicar boas práticas de desenvolvimento web;
-- Demonstrar integração entre PHP e banco de dados MySQL.
+---
 
+## Funcionalidades
 
+### Dashboard
 
-# 🚀 Como Executar o Projeto
+* Página inicial do sistema.
+* Centraliza o acesso aos módulos disponíveis.
 
-## 1. Pré-requisitos
+### Gerenciamento de Produtos
 
-Antes de iniciar, instale:
-- PHP 7.x
-- MySQL
-- Servidor Apache
-- Composer (opcional)
+* Listar produtos cadastrados.
+* Visualizar detalhes de um produto.
+* Cadastrar novos produtos.
+* Editar produtos existentes.
+* Excluir produtos.
 
-Uma opção mais simples é utilizar:
-- XAMPP
-- WampServer
-- Laragon
+### Gerenciamento de Categorias
 
-## 2. Clonar o Projeto
+* Listar categorias cadastradas.
+* Visualizar detalhes de uma categoria.
+* Cadastrar novas categorias.
+* Editar categorias existentes.
+* Excluir categorias.
+* Validação para impedir categorias duplicadas.
 
-Faça o clone dentro das pastas "/htdocs" (XAMPP) ou "/www" (WAMP). Com o terminal aberto em uma das pastas, é só executar o código abaixo.
+### Gerenciamento de Clientes
 
-```git clone https://github.com/thayslcorrea/api-produtos-php-mvc ```
+* Listar clientes cadastrados.
+* Visualizar informações de um cliente.
+* Cadastrar novos clientes.
+* Editar clientes existentes.
+* Excluir clientes.
 
-## 3. Iniciar os Serviços
+---
 
-Abra o painel do XAMPP/Wamp e inicie:
-- Apache
-- MySQL
+## Arquitetura MVC
 
+O sistema foi desenvolvido utilizando o padrão MVC (Model-View-Controller), que separa as responsabilidades da aplicação em três camadas principais.
 
-## 4. Criar o Banco de Dados
+### Model
 
-- Abra o navegador: http://localhost/phpmyadmin
-- Importe o arquivo SQL do projeto: database.sql
+Responsável pelo acesso ao banco de dados e execução das consultas SQL.
 
-## 5. Configurar a Conexão com o Banco
+Exemplos:
 
-- Localize o arquivo de configuração: api/core/Database.php
-- Configure:
+* Product.php
+* Category.php
+* User.php
 
-<?php
-$host = "localhost";
-$db   = "produtos_informatica";
-$user = "root"; (ou troque pelo usuário personalizado do seu servidor, caso exista.)
-$pass = ""; (ou troque pela senha personalizada do seu servidor, caso exista.)
-?>
+### View
 
-## 6. Configurar URL Base (se necessário)
+Responsável pela interface visual apresentada ao usuário.
 
-Em alguns projetos MVC existe uma constante:
+Exemplos:
 
-define('BASE_URL', 'http://localhost/api-produtos-php-mvc/');
+* Formulários de cadastro
+* Listagens
+* Telas de visualização
 
-Configure com o nome correto da sua pasta (onde o projeto se localiza no seu computador).
+### Controller
 
+Responsável por receber as requisições, processar as regras de negócio e enviar os dados para as views.
 
-## 7. Executar o Projeto
+Exemplos:
 
-Abra no navegador:
+* Product.php
+* Category.php
+* User.php
+* Home.php
 
-http://localhost/api-produtos-php-mvc
+---
 
+## Fluxo de Funcionamento
 
-## 8. Estrutura Básica do Projeto MVC
+O fluxo da aplicação segue a seguinte sequência:
 
-```bash
-/
-│
-├── api/
-│   ├── controllers/
-│   ├── models/
-│   └── views/
-|   └── database/
-|   └── core/
-│
-├── assets/
-├── .htaccess
-├── README.md
-└── index.php
+URL → Controller → Model → Banco de Dados → View → Usuário
+
+Exemplo:
+
+1. O usuário acessa `/product`.
+2. O Controller Product recebe a requisição.
+3. O Controller chama o método `findAll()` do Model Product.
+4. O Model executa a consulta SQL no banco de dados.
+5. Os dados retornam para o Controller.
+6. O Controller envia os dados para a View.
+7. A View exibe as informações para o usuário.
+
+---
+
+## Estrutura do Projeto
+
+```text
+api/
+├── controllers/
+├── core/
+├── database/
+├── models/
+├── views/
+├── autoload.php
+
+assets/
+├── css/
+├── js/
+
+index.php
 ```
+
+### Core
+
+Contém as classes principais do framework:
+
+* App.php: responsável pelo roteamento.
+* Controller.php: classe base dos controllers.
+* Database.php: responsável pela conexão com o banco de dados.
+
+### Controllers
+
+Controlam as ações da aplicação:
+
+* Home
+* Product
+* Category
+* User
+
+### Models
+
+Realizam as operações de banco de dados:
+
+* SELECT
+* INSERT
+* UPDATE
+* DELETE
+
+### Views
+
+Responsáveis pela interface apresentada ao usuário.
+
+---
+
+## Banco de Dados
+
+O sistema utiliza MySQL como banco de dados.
+
+Principais entidades:
+
+### Categorias
+
+Armazena as categorias dos produtos.
+
+Exemplos:
+
+* Notebooks
+* Periféricos
+* Monitores
+
+### Produtos
+
+Armazena os produtos cadastrados.
+
+Campos principais:
+
+* Nome
+* Descrição
+* Preço
+* Estoque
+* Categoria
+
+### Clientes
+
+Armazena os dados dos clientes cadastrados.
+
+---
+
+## Tecnologias Utilizadas
+
+* PHP 8+
+* MySQL
+* PDO
+* HTML5
+* CSS3
+* Bootstrap 5
+* Bootstrap Icons
+* JavaScript
+* Arquitetura MVC
+
+---
+
+## Objetivo do Projeto
+
+O principal objetivo deste projeto é aplicar conceitos de desenvolvimento web utilizando PHP Orientado a Objetos, arquitetura MVC, manipulação de banco de dados com PDO e organização de código em camadas, simulando o funcionamento de um sistema administrativo para gerenciamento de produtos de informática.
+
+---
+
+Desenvolvido para fins acadêmicos e de aprendizado em desenvolvimento web com PHP.
